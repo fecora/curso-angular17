@@ -1,0 +1,41 @@
+@if(media >= 7 ){
+    <p>Aprovado(a)</p>
+}@else if (media >=5){
+    <p>Em Exame</p>
+}@else {
+    <p>Reprovado(a)</p>
+}
+
+@switch (linguagem) {
+    @case ('HTML') {<p>Linguagem de marcação</p>}
+    @case ('CSS') {<p>Linguagem de Estilos</p>}
+    @case ('JS') {<p>Lionguagem de Programação</p>}
+    @default {<p>Linguagem não Localizada</p>}
+}
+
+
+
+@for (nome of nomes; track $index) {
+    <p>{{$index}} - {{nome}}</p>
+}
+
+<!--
+$count	Retorna a quantidade de vezes que um loop foi realizado
+$index	Índice do laço de repetição que está sendo executado
+$first	Retorna se determinada posição é a primeira linha que está sendo executada
+$last	Retorna se determinada posição é a última linha que está sendo executada
+$even	Retorna verdadeiro, caso a linha seja par
+$odd	Retorna verdadeiro, caso a linha seja ímpar
+-->
+
+<!--
+Dica: Você pode implementar o uso do comando @empty. 
+Caso a estrutura de repetição não seja realizada, podemos retornar uma mensagem, estrutura bem interessante, 
+caso o vetor não contenha registros:
+
+@for (n of nomes; track $index) {
+    <p>{{$index}} - {{n}}</p>
+}@empty{
+    <p>Não existe nenhum nome registrado.</p>
+}
+-->
